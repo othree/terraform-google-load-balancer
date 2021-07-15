@@ -29,7 +29,7 @@ resource "google_compute_target_http_proxy" "http" {
   count   = var.enable_http ? 1 : 0
   project = var.project
   name    = "${var.name}-http-proxy"
-  url_map = var.url_map
+  url_map = length(var.url_map_http) > 0 ? var.url_map_http : var.url_map
 }
 
 resource "google_compute_global_forwarding_rule" "http" {

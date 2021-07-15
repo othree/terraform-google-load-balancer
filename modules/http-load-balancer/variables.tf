@@ -18,6 +18,12 @@ variable "url_map" {
   type        = string
 }
 
+variable "url_map_http" {
+  description = "A reference (self_link) to the url_map resource to use for HTTP proxy."
+  type        = string
+  default     = ""
+}
+
 # ---------------------------------------------------------------------------------------------------------------------
 # OPTIONAL MODULE PARAMETERS
 # These variables have defaults, but may be overridden by the operator.
